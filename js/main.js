@@ -3,3 +3,7 @@
 
   var hello = 'world';  
 }());
+
+function SimpleController($scope){
+
+}
