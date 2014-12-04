@@ -1,0 +1,19 @@
+{
+  "name": "NSS-SimpleAngularBinding",
+  "version": "0.0.0",
+  "homepage": "https://github.com/stephania07/NSS-SimpleAngularBinding",
+  "authors": [
+    "Stephania <stephania07>"
+  ],
+  "description": "NSS-SimpleAngularBinding",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
