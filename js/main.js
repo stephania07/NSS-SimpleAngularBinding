@@ -3,8 +3,9 @@
 
 //var app = angular.module('myApp', []);
 angular.module('myApp', [])
-.controller('SimpleController', function($scope){
-  $scope.name = "Stephania";
-	$scope.friends = ['Ashley', 'Bob', 'Carley', 'Dave'];
+.controller('SimpleController', function(){
+	var vm = this;			
+  vm.name = "Stephania";
+	vm.friends = ['Ashley', 'Bob', 'Carley', 'Dave'];
 });
 }());
