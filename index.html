@@ -4,31 +4,32 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"  href="main.css">
   <title>My Todo App</title>
 </head>
 <body>
   <div class="container" ng-controller="TodoController as todoCtrl">
  	<h1>My Todos</h1>
-	<form>
-    <label>Name</label><input type="text" ng-model="todoCtrl.newTask.name">
-    <label>Description</label><input type="text" ng-model="todoCtrl.newTask.description">
-    <label>Due Date</label><input type="date" ng-model="todoCtrl.newTask.due">
-		<button ng-click="todoCtrl.addNewTask()">Add Task</button>
+	<form name="myForm" ng-submit="myForm.$valid && todoCtrl.addNewTask()" novalidate>
+    <label>Name</label><input type="text" ng-model="todoCtrl.newTask.name" required>
+    <label>Description</label><input type="text" ng-model="todoCtrl.newTask.description" required>
+    <label>Due Date</label><input type="date" ng-model="todoCtrl.newTask.due" required>
+		<input type="submit">Add Task</input>
 	</form>
 	<table>
-		<thead>
+		<thead >
 			<tr>
 				<th>Task Name</th>
 				<th>Task Description</th>
-				<th>Task Due date</th>
+				<th>Task Due date</th> 
 				<th>Remove Task</th>
 			</tr>
 		</thead>
 		<tbody>
 		<tr ng-repeat="task in todoCtrl.tasks">
-		  <td>{{task.name}}</td>
+  		<td> {{task.name}}</td>
 		  <td>{{task.desc}}</td>
-		  <td>{{task.due}}</td>
+		  <td>{{task.due | date: short}}</td>
 		  <td><button ng-click="todoCtrl.removeTodo(task)">Delete</button></td>
 		</tr>
 		</tbody>
