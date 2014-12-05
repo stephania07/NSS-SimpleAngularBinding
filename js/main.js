@@ -8,25 +8,37 @@ angular.module('todoApp', [])
   vm.tasks = [
   { name: 'Learn Angular',
 		desc: 'If I could learn Angular I\'d be soooo happy!',
-	  due: 'Today'
+	  due: 'Today',
+		priority: 'high'		
 	},			
   { name: 'Finish Tic Tac Toe',
 		desc: 'Firebase Arrrrggghhhhhhhh!',
-	  due: 'Monday'
+	  due: 'Monday',
+		priority: 'low'		
 	},
   { name: 'Get a job',
 		desc: 'profit!',
-	  due: 'April 2015'
+	  due: 'April 2015',
+		priority: 'medium'		
   }			
 	];
   
   vm.addNewTask = function(){
     vm.tasks.push(vm.newTask);
-    vm.newTask = null;
+    vm.newTask = _freshTask();
 	};
- vm.removeTodo = function(todo){
+ 
+	vm.removeTodo = function(todo){
     var index = vm.tasks.indexOf(todo);
 	  vm.tasks.splice(index, 1);
- }	
+ };
+
+	vm.newTask = _freshTask();
+
+function _freshTask(){
+  return {
+	  priority: 'low'
+	}
+}	
  });
 }());
